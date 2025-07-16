@@ -1,0 +1,67 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+/* src/app.css or src/global.css */
+@font-face {
+	font-family: 'Geist';
+	src: url('/fonts/Geist-VariableFont_wght.ttf') format('truetype-variations');
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@theme {
+	--color-primary: rgba(21, 29, 38, 1);
+	--color-secondary: rgba(51, 152, 219, 1);
+	--color-accent: rgba(81, 113, 147, 1);
+
+	/* State Colors (often used for feedback messages or interactive states) */
+	--color-success: rgba(40, 167, 69, 1); /* Green for success */
+	--color-success-light: rgba(209, 237, 217, 1);
+	--color-warning: rgba(255, 193, 7, 1); /* Yellow/Orange for warning */
+	--color-warning-light: rgba(255, 243, 205, 1);
+	--color-error: rgba(220, 53, 69, 1); /* Red for error */
+	--color-error-light: rgba(248, 215, 218, 1);
+	--color-info: rgba(23, 162, 184, 1); /* Blue for information */
+	--color-info-light: rgba(204, 240, 243, 1);
+	--color-disabled: var(--color-gray-300); /* For disabled elements */
+
+	/* Interactive States (optional, for subtle variations) */
+	--color-primary-hover: rgba(14, 20, 27, 1); /* Slightly darker primary for hover */
+	--color-secondary-hover: rgba(39, 122, 176, 1); /* Slightly darker secondary for hover */
+	--color-accent-hover: rgba(65, 90, 117, 1); /* Slightly darker accent for hover */
+
+	--font-sans:
+		Geist, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+}
+
+.font-nav {
+	font-size: 1.125rem;
+}
+.heading-xxl {
+	font-size: 7.5rem;
+}
+.heading-xl {
+	font-size: 4.625rem;
+}
+.heading-l {
+	font-size: 2.375rem;
+}
+.heading-md {
+	font-size: 1.75rem;
+}
+.heading-sm {
+	font-size: 1.5rem;
+}
+.body-lg {
+	font-size: 1.125rem;
+}
+.body-md {
+	font-size: 1rem;
+}
+/* more utilities */
+.max-h-unset{
+	max-height: unset;
+}
