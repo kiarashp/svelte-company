@@ -41,7 +41,7 @@
 	}
 </script>
 
-<div class="mt-[96px] flex flex-col bg-[url(/decorative/faq-bg.png)] bg-cover bg-center px-[7rem]">
+<div class="mt-[96px] flex flex-col  px-[7rem]">
 	<p class="heading-xl">FAQs</p>
 	<p class="body-lg w-9/12">
 		Find clear, concise answers about our services, processes, and how we help businesses achieve

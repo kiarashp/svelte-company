@@ -61,6 +61,9 @@
 .body-md {
 	font-size: 1rem;
 }
+.body-sm {
+	font-size: 0.875rem;
+}
 /* more utilities */
 .max-h-unset{
 	max-height: unset;

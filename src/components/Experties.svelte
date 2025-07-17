@@ -40,7 +40,7 @@
 </script>
 
 <div
-	class="mt-[96px] flex flex-col bg-[url(/decorative/experties-bg.png)] bg-cover bg-center px-[7rem]"
+	class="mt-[96px] flex flex-col px-[7rem]"
 >
 	<p class="heading-xl">Our Expertise</p>
 	<p class="body-lg w-9/12">

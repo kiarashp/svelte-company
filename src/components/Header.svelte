@@ -17,11 +17,11 @@
 		<div class="bg-primary h-[10px] w-[10px] rounded-full"></div>
 		<a class="hover:text-gray-500 transition duration-300 cursor-pointer active:text-secondary" href="/about-us">About Us</a>
 		<div class="bg-primary h-[10px] w-[10px] rounded-full"></div>
-		<a class="hover:text-gray-500 transition duration-300 cursor-pointer active:text-secondary" href="/">Case Studies</a>
+		<a class="hover:text-gray-500 transition duration-300 cursor-pointer active:text-secondary" href="/case-studies">Case Studies</a>
 		<div class="bg-primary h-[10px] w-[10px] rounded-full"></div>
-		<a class="hover:text-gray-500 transition duration-300 cursor-pointer active:text-secondary" href="/">Services</a>
+		<a class="hover:text-gray-500 transition duration-300 cursor-pointer active:text-secondary" href="/services">Services</a>
 		<div class="bg-primary h-[10px] w-[10px] rounded-full"></div>
-		<a class="hover:text-gray-500 transition duration-300 cursor-pointer active:text-secondary" href="/">Contact Us</a>
+		<a class="hover:text-gray-500 transition duration-300 cursor-pointer active:text-secondary" href="/contact-us">Contact Us</a>
 		<div class="bg-primary h-[10px] w-[10px] rounded-full"></div>
 	</nav>
 <ButtonPrimary btnTxt="Get a consultation"/>

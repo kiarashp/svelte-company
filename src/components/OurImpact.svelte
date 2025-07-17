@@ -23,7 +23,7 @@
 	];
 </script>
 
-<div class="mt-[96px] flex flex-col px-[7rem] bg-[url(/decorative/impact-bg.png)] bg-cover bg-center">
+<div class="mt-[96px] flex flex-col px-[7rem]">
 	<p class="heading-xl">Our Impact</p>
 	<p class="body-lg w-9/12">Discover the milestones that define our success.</p>
 	<div class="mt-[45px] grid grid-cols-12 gap-[30px]">

@@ -24,7 +24,7 @@
 	];
 </script>
 
-<div class="mt-[96px] flex flex-col bg-[url(/decorative/why-bg.png)] bg-cover bg-center px-[7rem]">
+<div class="mt-[96px] flex flex-col px-[7rem]">
 	<p class="heading-xl">Join Us</p>
 	<p class="body-lg w-9/12">
 		Looking for a career where you can innovate and make an impact? ABC Company is always on the lookout for passionate individuals to join our growing team.

@@ -28,7 +28,7 @@
 	];
 </script>
 
-<div class="mt-[96px] flex flex-col bg-[url(/decorative/why-bg.png)] bg-cover bg-center px-[7rem]">
+<div class="mt-[96px] flex flex-col px-[7rem]">
 	<p class="heading-xl">What We Stand For</p>
 	<p class="body-lg w-9/12">
 		Our unwavering values shape our approach to delivering impactful solutions.

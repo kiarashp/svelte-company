@@ -53,7 +53,7 @@
 	];
 </script>
 
-<div class="mt-[96px] flex flex-col bg-[url(/decorative/why-bg.png)] bg-cover bg-center px-[7rem]">
+<div class="mt-[96px] flex flex-col  px-[7rem]">
 	<p class="heading-xl">Meet Our Team</p>
 	<p class="body-lg w-9/12">
 		Our global team of experienced engineers, consultants, and project managers is the backbone of

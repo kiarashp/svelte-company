@@ -24,7 +24,7 @@
 	];
 </script>
 
-<div class="mt-[96px] flex flex-col bg-[url(/decorative/why-bg.png)] bg-cover bg-center px-[7rem]">
+<div class="mt-[96px] flex flex-col  px-[7rem]">
 	<p class="heading-xl">Why Choose ABC Company?</p>
 	<p class="body-lg w-9/12">
 		We provide end-to-end solutions to help businesses across industries overcome challenges,

@@ -26,7 +26,7 @@
 </script>
 
 <div
-	class="mt-[96px] flex flex-col bg-[url(/decorative/stories-bg.png)] bg-cover bg-center px-[7rem]"
+	class="mt-[96px] flex flex-col  px-[7rem]"
 >
 	<p class="heading-xl">Success Stories</p>
 	<p class="body-lg w-9/12">Discover the milestones that define our success.</p>
