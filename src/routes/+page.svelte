@@ -5,7 +5,6 @@
 	import WhyAbc from '../components/WhyAbc.svelte';
 	import Stories from '../components/Stories.svelte';
 	import Faq from '../components/Faq.svelte';
-	import GetInTouch from '../components/GetInTouch.svelte';
 </script>
 
 <Hero
@@ -20,4 +19,3 @@ Global Businesses"
 <WhyAbc />
 <Stories />
 <Faq />
-<GetInTouch />
