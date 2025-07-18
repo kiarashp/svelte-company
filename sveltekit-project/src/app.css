@@ -15,6 +15,7 @@
 	--color-primary: rgba(21, 29, 38, 1);
 	--color-secondary: rgba(51, 152, 219, 1);
 	--color-accent: rgba(81, 113, 147, 1);
+	--color-mist :rgba(251, 253, 254, 1);
 
 	/* State Colors (often used for feedback messages or interactive states) */
 	--color-success: rgba(40, 167, 69, 1); /* Green for success */

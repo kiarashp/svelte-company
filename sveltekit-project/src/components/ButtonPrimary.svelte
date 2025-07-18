@@ -1,10 +1,10 @@
-	<script>
-        let {btnTxt} = $props()
+	<script lang="ts">
+        let {btnTxt, ...others} = $props()
     </script>
     <!-- button -->
-	<div
+	<button
 		class="relative flex min-h-[54px] min-w-[200px] items-center justify-center bg-gradient-to-b
-      from-[#3398DB] to-[#BDDEF3] p-[2px]"
+      from-[#3398DB] to-[#BDDEF3] p-[2px]" {...others}
 	>
 		<!-- noise overlay -->
 		<div
@@ -28,4 +28,4 @@
 				>
 			</div>
 		</div>
-	</div>
+	</button>

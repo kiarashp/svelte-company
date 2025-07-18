@@ -1,10 +1,13 @@
-<script>
+<script lang="ts">
 	import Hero from '../components/Hero.svelte';
 	import Experties from '../components/Experties.svelte';
 	import OurImpact from '../components/OurImpact.svelte';
 	import WhyAbc from '../components/WhyAbc.svelte';
 	import Stories from '../components/Stories.svelte';
 	import Faq from '../components/Faq.svelte';
+
+	const {data} = $props()
+	$inspect(data)
 </script>
 
 <Hero
@@ -17,5 +20,5 @@ Global Businesses"
 <Experties />
 <OurImpact />
 <WhyAbc />
-<Stories />
+<Stories stories={data.stories} />
 <Faq />

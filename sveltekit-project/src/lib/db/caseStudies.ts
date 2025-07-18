@@ -1,4 +1,4 @@
-import type { CaseStudy } from '$lib/types';
+import type { CaseStudy } from '../types/types';
 const caseStudies: CaseStudy[] = [
 	{
 		imgUrl: 'post-1',
