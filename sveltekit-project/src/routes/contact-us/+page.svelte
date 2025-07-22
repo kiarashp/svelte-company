@@ -2,9 +2,73 @@
 	import Hero from '../../components/Hero.svelte';
 	import ButtonPrimary from '$components/ButtonPrimary.svelte';
 
-	function handleSubmitForm(e) {
+	interface theInput {
+		value: string;
+		touched: boolean;
+		isValid: boolean;
+	}
+	function checkValidity(event: Event, filedName: theInput) {
+		filedName.touched = true;
+
+		const target = event.target as HTMLInputElement;
+		if (target.value.length > 0) {
+			filedName.isValid = true;
+		} else {
+			filedName.isValid = false;
+		}
+	}
+	let contactName: theInput = $state({
+		value: '',
+		touched: false,
+		isValid: false
+	});
+	let contactLastName = $state({
+		value: '',
+		touched: false,
+		isValid: false
+	});
+	let contactService = $state({
+		value: '',
+		touched: false,
+		isValid: false
+	});
+	let contactBudget = $state({
+		value: '',
+		touched: false,
+		isValid: false
+	});
+	let contactSubject = $state({
+		value: '',
+		touched: false,
+		isValid: false
+	});
+	let contactMessage = $state({
+		value: '',
+		touched: false,
+		isValid: false
+	});
+	let isFormInvalid = $state(false);
+
+	function handleSubmitForm(e: Event) {
 		e.preventDefault();
-		console.log('jj');
+		if (
+			contactName.isValid &&
+			contactLastName.isValid &&
+			contactService.isValid &&
+			contactBudget.isValid &&
+			contactSubject.isValid &&
+			contactMessage.isValid
+		) {
+			console.log('send data');
+		} else {
+			isFormInvalid = true;
+			contactName.touched = true;
+			contactLastName.touched = true;
+			contactService.touched = true;
+			contactBudget.touched = true;
+			contactSubject.touched = true;
+			contactMessage.touched = true;
+		}
 	}
 </script>
 
@@ -21,18 +85,25 @@
 		Your vision, our expertise. Discover how we can help you achieve sustainable growth and
 		impactful solutions.
 	</p>
-	<form class="text-primary mt-[45px] grid w-full grid-cols-12 gap-[30px]" >
+	<form class="text-primary mt-[45px] grid w-full grid-cols-12 gap-[30px]">
 		<!-- first name -->
 		<div class="col-span-6 flex flex-col">
 			<label class="text-primary" for="first-name-input">First Name</label>
 			<div class="w-full">
 				<input
 					class="bg-mist border-accent focus:ring-accent h-full w-full appearance-none border-[2px] focus:ring-2"
+					class:bg-mist={contactName.isValid}
+					class:inputError={!contactName.isValid && contactName.touched}
 					type="text"
 					id="first-name-input"
 					name="first-name"
 					placeholder="e.g. Jane"
 					autocomplete="given-name"
+					required
+					bind:value={contactName.value}
+					oninput={(e) => {
+						checkValidity(e, contactName);
+					}}
 				/>
 			</div>
 		</div>
@@ -41,12 +112,19 @@
 			<label class="text-primary" for="last-name-input">Last Name</label>
 			<div class="w-full">
 				<input
-					class="bg-mist border-accent focus:ring-accent h-full w-full appearance-none border-[2px] focus:ring-2"
+					class="border-accent focus:ring-accent h-full w-full appearance-none border-[2px] focus:ring-2"
+					class:bg-mist={contactLastName.isValid}
+					class:inputError={!contactLastName.isValid && contactLastName.touched}
 					type="text"
 					id="last-name-input"
 					name="last-name"
 					placeholder="e.g. Doe"
 					autocomplete="family-name"
+					required
+					bind:value={contactLastName.value}
+					oninput={(e) => {
+						checkValidity(e, contactLastName);
+					}}
 				/>
 			</div>
 		</div>
@@ -54,9 +132,16 @@
 		<div class="col-span-6 flex flex-col">
 			<label class="text-primary" for="service-input">Service</label>
 			<select
-				class="bg-mist border-accent focus:ring-accent h-full w-full appearance-none border-[2px] focus:ring-2"
+				class="border-accent focus:ring-accent h-full w-full appearance-none border-[2px] focus:ring-2"
+				class:bg-mist={contactService.isValid}
+				class:inputError={!contactService.isValid && contactService.touched}
 				name="service"
 				id="service-input"
+				bind:value={contactService.value}
+				required
+				oninput={(e) => {
+					checkValidity(e, contactService);
+				}}
 			>
 				<option value="product-consulting">Product Consulting</option>
 				<option value="legacy-system-migration">Legacy System Migration</option>
@@ -71,14 +156,21 @@
 			<label class="text-primary" for="budget-input">Budget</label>
 			<div class="relative w-full">
 				<input
-					class="bg-mist border-accent focus:ring-accent h-full w-full appearance-none border-[2px] focus:ring-2"
+					class=" border-accent focus:ring-accent h-full w-full appearance-none border-[2px] focus:ring-2"
+					class:bg-mist={contactBudget.isValid}
+					class:inputError={!contactBudget.isValid && contactBudget.touched}
 					type="number"
 					id="budget-input"
 					name="budget"
 					placeholder="900"
+					bind:value={contactBudget.value}
+					required
+					oninput={(e) => {
+						checkValidity(e, contactBudget);
+					}}
 				/>
 				<div
-					class="absolute top-[50%] right-0 z-20 flex aspect-square h-[50%] w-auto -translate-y-[50%] items-center justify-center"
+					class="absolute right-0 top-[50%] z-20 flex aspect-square h-[50%] w-auto -translate-y-[50%] items-center justify-center"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"
 						><!-- Icon from Bootstrap Icons by The Bootstrap Authors - https://github.com/twbs/icons/blob/main/LICENSE.md --><path
@@ -94,12 +186,19 @@
 			<label class="text-primary" for="last-name-input">Subject</label>
 			<div class="w-full">
 				<input
-					class="bg-mist border-accent focus:ring-accent h-full w-full appearance-none border-[2px] focus:ring-2"
+					class="border-accent focus:ring-accent h-full w-full appearance-none border-[2px] focus:ring-2"
+					class:bg-mist={contactSubject.isValid}
+					class:inputError={!contactSubject.isValid && contactSubject.touched}
 					type="text"
 					id="subject-input"
 					name="subject"
 					placeholder="e.g. The subject"
 					autocomplete="off"
+					bind:value={contactSubject.value}
+					required
+					oninput={(e) => {
+						checkValidity(e, contactSubject);
+					}}
 				/>
 			</div>
 		</div>
@@ -108,10 +207,17 @@
 			<label class="text-primary" for="message-input">Message</label>
 			<div class="w-full">
 				<textarea
-					class="bg-mist border-accent focus:ring-accent h-full w-full appearance-none border-[2px] focus:ring-2"
+					class=" border-accent focus:ring-accent h-full w-full appearance-none border-[2px] focus:ring-2"
+					class:bg-mist={contactMessage.isValid}
+					class:inputError={!contactMessage.isValid && contactMessage.touched}
 					name="message"
 					id="message-input"
 					placeholder="e.g. Your message..."
+					bind:value={contactMessage.value}
+					required
+					oninput={(e) => {
+						checkValidity(e, contactMessage);
+					}}
 				></textarea>
 			</div>
 		</div>
@@ -119,3 +225,13 @@
 		<ButtonPrimary type="submit" btnTxt="Send Message" onclick={handleSubmitForm} />
 	</form>
 </div>
+
+<style>
+	.inputError {
+		background-color: rgba(220, 53, 69, 1);
+		color: rgba(251, 253, 254, 1);
+	}
+	.inputError::placeholder {
+		color: rgba(251, 253, 254, 1);
+	}
+</style>

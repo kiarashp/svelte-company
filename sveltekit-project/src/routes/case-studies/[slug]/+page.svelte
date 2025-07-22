@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Header from '../../../components/Header.svelte';
-	import type { CaseStudy } from '$lib/types';
 	import type { PageProps } from './$types';
 	import caseStudies from '$lib/db/caseStudies';
 
