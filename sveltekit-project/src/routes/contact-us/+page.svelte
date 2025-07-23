@@ -2,7 +2,7 @@
 	import Hero from '$components/Hero.svelte';
 	import ButtonPrimary from '$components/ButtonPrimary.svelte';
 	import { json } from '@sveltejs/kit';
-
+;
 	interface theInput {
 		value: string;
 		touched: boolean;
@@ -67,12 +67,12 @@
 			const response = await fetch('/api/send-mail', {
 				method: 'POST',
 				body: JSON.stringify({
-					contactName: contactName.isValid,
-					contactEmail: contactEmail.isValid,
-					contactService: contactService.isValid,
-					contactBudget: contactBudget.isValid,
-					contactSubject: contactSubject.isValid,
-					contactMessage: contactMessage.isValid
+					contactName: contactName.value,
+					contactEmail: contactEmail.value,
+					contactService: contactService.value,
+					contactBudget: contactBudget.value,
+					contactSubject: contactSubject.value,
+					contactMessage: contactMessage.value
 				}),
 				headers: { 'Ccontent-Type': 'application/json' }
 			});

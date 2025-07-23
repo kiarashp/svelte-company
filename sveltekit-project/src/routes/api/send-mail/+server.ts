@@ -29,8 +29,8 @@ export async function POST({ request }) {
 		return json({ error: 'All fields are required' }, { status: 400 });
 	}
 	const msg = {
-		to: 'info@kiapmd.com',
-		from: 'form@kiapmd.com',
+		to: 'info@kiapmd.dev',
+		from: 'form@kiapmd.dev',
 		subject: `New Contact Us Form Submission from ABC Company`,
 		html: `somebody used the contact us form on ABC Company website. Here are the details:<br>
         <p><strong>Name:</strong> ${contactName}</p>
