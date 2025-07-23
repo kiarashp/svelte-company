@@ -22,6 +22,7 @@
 	--color-success-light: rgba(209, 237, 217, 1);
 	--color-warning: rgba(255, 193, 7, 1); /* Yellow/Orange for warning */
 	--color-warning-light: rgba(255, 243, 205, 1);
+	--color-errorRed: rgba(220, 53, 69, 1);
 	--color-error-light: rgba(248, 215, 218, 1);
 	--color-info: rgba(23, 162, 184, 1); /* Blue for information */
 	--color-info-light: rgba(204, 240, 243, 1);

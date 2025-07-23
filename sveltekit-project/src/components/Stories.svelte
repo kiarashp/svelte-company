@@ -1,5 +1,5 @@
 <script lang="ts">
-import type { SuccessStory } from 'src/lib/types/sanity';
+import type { SuccessStory } from '$lib/types/sanity';
 
 	import ButtonOutline from './ButtonOutline.svelte';
 

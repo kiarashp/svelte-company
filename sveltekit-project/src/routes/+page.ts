@@ -1,5 +1,5 @@
 import sanityClient from '$lib/utils/sanity';
-import type { SuccessStory } from 'src/lib/types/sanity';
+import type { SuccessStory } from '$lib/types/sanity';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async () => {

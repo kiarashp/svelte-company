@@ -1,4 +1,9 @@
 	<script lang="ts">
+
+		interface button {
+			btnTxt: string,
+			others :  any
+		}
         let {btnTxt, ...others} = $props()
     </script>
     <!-- button -->

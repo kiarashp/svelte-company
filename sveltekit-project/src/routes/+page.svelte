@@ -4,10 +4,9 @@
 	import OurImpact from '../components/OurImpact.svelte';
 	import WhyAbc from '../components/WhyAbc.svelte';
 	import Stories from '../components/Stories.svelte';
-	import Faq from '../components/Faq.svelte';
+	import Faq from '$components/Faq.svelte';
 
 	const {data} = $props()
-	$inspect(data)
 </script>
 
 <Hero
