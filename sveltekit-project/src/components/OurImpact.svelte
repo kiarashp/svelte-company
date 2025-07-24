@@ -1,34 +1,13 @@
 <script lang="ts">
-	type Impact = {
-		title: string;
-		desc: string;
-	};
-	const impacts: Impact[] = [
-		{
-			title: '95%',
-			desc: 'Client Satisfaction Rate'
-		},
-		{
-			title: '300+',
-			desc: 'Successful Projects Delivered'
-		},
-		{
-			title: '40%',
-			desc: 'Faster MVP Delivery'
-		},
-		{
-			title: '10+',
-			desc: 'Years of Combined Expertise'
-		}
-	];
+	import impacts from '$lib/db/impacts';
 </script>
 
-<div class="mt-[96px] flex flex-col px-[7rem]">
+<div class="xl:mt-[96px] mt-[50px] flex flex-col paddingContainer">
 	<p class="heading-xl">Our Impact</p>
 	<p class="body-lg w-9/12">Discover the milestones that define our success.</p>
-	<div class="mt-[45px] grid grid-cols-12 gap-[30px]">
+	<div class="mt-[45px] grid grid-cols-12 xl:gap-[30px] gap-3">
 		{#each impacts as impact (impact.title)}
-			<div class="text-primary col-span-3 flex flex-col items-center justify-center gap-[24px]">
+			<div class="text-primary md:col-span-3 col-span-12 flex flex-col items-center justify-start  gap-x-[24px] mt-3 md:mt-0">
 				<p class="heading-xl font-bold">{impact.title}</p>
 				<p class="body-lg">{impact.desc}</p>
 			</div>

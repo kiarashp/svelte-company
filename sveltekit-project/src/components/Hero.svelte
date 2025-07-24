@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Header from './Header.svelte';
 	import ButtonPrimary from './ButtonPrimary.svelte';
+	import logos from '$lib/db/logos';
 
 	const {
 		title,
@@ -15,21 +16,20 @@
 	}>();
 </script>
 
-
 <div
-	class="relative flex min-h-screen flex-col justify-start bg-[url('/decorative/shady-circle.png')] bg-contain bg-center
-	 bg-no-repeat px-[1rem] pb-[20px] xl:px-[7rem] xl:pb-[30px]"
+	class="relative flex flex-col justify-start bg-[url('/decorative/shady-circle.png')] bg-contain bg-center bg-no-repeat
+	  pb-[20px] xl:min-h-screen paddingContainer xl:pb-[30px]"
 >
 	<Header />
 
-	<p class="heading-xxl mt-[105px] w-10/12">{title}</p>
-	<p class="body-lg mt-[24px] w-10/12">
+	<p class="heading-xxl w-12/12 mt-[105px] xl:w-10/12">{title}</p>
+	<p class="body-lg w-12/12 mt-[24px] xl:w-10/12">
 		{subtitle}
 	</p>
-	<p class="body-lg mt-[68px] w-6/12 self-end">
+	<p class="body-lg w-12/12 mt-[68px] self-end xl:w-6/12">
 		{description}
 	</p>
-	<div class="mt-[24px] flex w-6/12 items-center gap-[24px] self-end">
+	<div class="w-12/12 mt-[24px] flex flex-col md:flex-row items-center gap-[24px] self-end xl:w-6/12">
 		<ButtonPrimary btnTxt="Get a consultation" />
 		<a
 			class="body-md hover:decoration-secondary hover:text-accent active:text-primary active:decoration-primary font-semibold underline duration-300"
@@ -37,16 +37,15 @@
 		>
 	</div>
 	{#if showGrowingClients}
-		<div class="heading-sm mt-[138px] self-center font-semibold">
+		<div class="heading-sm mt-9 self-center font-semibold xl:mt-[138px]">
 			Join in our ever growing client list
 		</div>
-		<div class="mt-[26px] grid w-full grid-cols-12 gap-[1.8rem]">
-			<img class="col-span-2" src="/clients/logo1.svg" alt="" />
-			<img class="col-span-2" src="/clients/logo2.svg" alt="" />
-			<img class="col-span-2" src="/clients/logo3.svg" alt="" />
-			<img class="col-span-2" src="/clients/logo4.svg" alt="" />
-			<img class="col-span-2" src="/clients/logo5.svg" alt="" />
-			<img class="col-span-2" src="/clients/logo6.svg" alt="" />
+		<div class="mt-[26px] grid w-full grid-cols-12 justify-items-center gap-3.5 xl:gap-[1.8rem]">
+			{#each logos as logo (logo)}
+				<div class="col-span-6 md:col-span-4 xl:col-span-2">
+					<img class="h-full w-full object-contain" src={logo} alt="" />
+				</div>
+			{/each}
 		</div>
 	{/if}
 </div>

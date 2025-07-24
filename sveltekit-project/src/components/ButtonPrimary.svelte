@@ -9,7 +9,7 @@
     </script>
     <!-- button -->
 	<button
-		class={`relative z-10 flex min-h-[54px] min-w-[200px] items-center justify-center bg-gradient-to-b
+		class={`relative z-10 flex min-h-[54px] xl:min-w-[200px] min-w-[100px] items-center justify-center bg-gradient-to-b
       from-[#3398DB] to-[#BDDEF3] p-[2px] ${customClass}`} {...others}
 	>
 		<!-- noise overlay -->

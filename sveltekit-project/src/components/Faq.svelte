@@ -1,35 +1,5 @@
 <script lang="ts">
-	type Faq = {
-		id: string;
-		question: string;
-		answer: string;
-	};
-	const Faqs: Faq[] = [
-		{
-			id: '1',
-			question: 'What industries do you serve?',
-			answer:
-				'We serve clients across industries, including technology, healthcare, finance, retail, and more.'
-		},
-		{
-			id: '2',
-			question: 'How do you ensure security and reliability?',
-			answer:
-				'We ensure security and reliability through a multi-layered approach including end-to-end encryption, regular security audits, compliance with industry standards, and robust disaster recovery protocols. Our infrastructure is designed for high availability, with continuous monitoring and automated failovers to maximize uptime.'
-		},
-		{
-			id: '3',
-			question: 'Can your solutions scale with my business?',
-			answer:
-				'Yes, our solutions are built with scalability in mind, utilizing cloud-native architectures and flexible technologies that can seamlessly grow alongside your business demands. We design for elasticity, allowing you to easily expand capacity as your needs evolve.'
-		},
-		{
-			id: '4',
-			question: 'Do you offer dedicated teams for ongoing projects?',
-			answer:
-				'Yes, we offer dedicated teams tailored to your ongoing project needs. This ensures consistent expertise, deep project understanding, and seamless collaboration throughout the project lifecycle, from development to maintenance and continuous improvement.'
-		}
-	];
+	import Faqs from '$lib/db/faq';
 	let openedFaq = $state<string | null>(null);
 	function accordionClicked(faqId: string) {
 		// is it the same opened one
@@ -41,9 +11,9 @@
 	}
 </script>
 
-<div class="mt-[96px] flex flex-col  px-[7rem]">
+<div class="paddingContainer mt-[96px] flex flex-col">
 	<p class="heading-xl">FAQs</p>
-	<p class="body-lg w-9/12">
+	<p class="body-lg w-12/12 xl:w-9/12">
 		Find clear, concise answers about our services, processes, and how we help businesses achieve
 		their goals.
 	</p>
@@ -53,20 +23,20 @@
 		<!-- each faq -->
 		<div class="flex w-full flex-col bg-white">
 			<button
-				class="mt-[26px] flex justify-between px-[24px] cursor-pointer"
+				class="mt-[26px] flex cursor-pointer justify-between items-center px-[24px] gap-3"
 				onclick={() => accordionClicked(faq.id)}
 				aria-expanded={faq.id === openedFaq}
 				aria-controls={`faq-panel-${faq.id}`}
 				id={`faq-button-${faq.id}`}
 			>
-				<p class="heading-md text-primary cursor-pointer duration-300 active:scale-95">
+				<p class="heading-md text-primary cursor-pointer duration-300 active:scale-95 text-start">
 					{faq.question}
 				</p>
 
 				{#if faq.id != openedFaq}
 					<!-- plus -->
 					<div
-						class=" flex h-[1.5rem] w-[1.5rem] cursor-pointer items-center justify-center transition-transform duration-100 active:scale-50"
+						class="  flex h-[1.5rem] min-w-[1.5rem] cursor-pointer items-center justify-center transition-transform duration-100 active:scale-50"
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +51,7 @@
 				{:else}
 					<!-- minus -->
 					<div
-						class="flex h-[1.5rem] w-[1.5rem] cursor-pointer items-center justify-center transition-transform duration-100 active:scale-50"
+						class="flex h-[1.5rem] min-w-[1.5rem] cursor-pointer items-center justify-center transition-transform duration-100 active:scale-50"
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -116,7 +86,7 @@
 	}
 
 	.eachFaq.opened {
-		animation: openFaq 0.8s ease-in;
+		animation: openFaq 0.4s ease-in;
 	}
 	@keyframes openFaq {
 		from {

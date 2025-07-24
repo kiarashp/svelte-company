@@ -1,49 +1,16 @@
 <script lang="ts">
-	type Card = {
-		imgUrl: string;
-		title: string;
-		desc: string;
-	};
-	const cards: Card[] = [
-		{
-			imgUrl: 'vector-1',
-			title: 'Email Us',
-			desc: 'contact@abccompany.com'
-		},
-		{
-			imgUrl: 'vector-2',
-			title: 'Call Us',
-			desc: '+1 (XXX) XXX-XXXX'
-		},
-		{
-			imgUrl: 'vector-3',
-			title: 'Visit Us',
-			desc: '123, Main Road, London, UK.'
-		}
-	];
+	import getInTouches from '$lib/db/getIntouch';
+	import SimpleCards from './SimpleCards.svelte';
 </script>
 
-<div class="mt-[96px] flex flex-col px-[7rem]">
-	<p class="heading-xl">Get in Touch Today</p>
-	<p class="body-lg w-9/12">
-		Let’s create the future of your business together. Whether you need consulting, development, or
-		robust digital solutions, ABC Company is here to help.
-	</p>
-	<div class="grid w-full grid-cols-12 gap-[30px]">
-		{#each cards as card (card.title)}
-			<div class="col-span-4 flex flex-col">
-				<div class="flex h-[505px] w-full items-center justify-center">
-					<img
-						class=" h-full w-auto object-contain"
-						src="/getInTouch/{card.imgUrl}.png"
-						alt={card.title}
-					/>
-				</div>
-				<p class="heading-md text-secondary mt-[24px]">{card.title}</p>
-				<p class="body-lg text-accent mt-[11px]">{card.desc}</p>
-			</div>
-		{/each}
-	</div>
+<SimpleCards
+	title="Get in Touch Today"
+	subtitle="Let’s create the future of your business together. Whether you need consulting, development, or
+		robust digital solutions, ABC Company is here to help."
+	contents={getInTouches}
+	gridCols="md:col-span-4 xl:col-span-4"
+/>
+<div class="mt-[96px] flex flex-col paddingContainer">
 
 	<!-- divider -->
 	<div class="mt-[45px] h-0.5 w-full bg-[rgba(81,113,147,0.5)]"></div>
