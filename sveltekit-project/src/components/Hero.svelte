@@ -17,7 +17,7 @@
 </script>
 
 <div
-	class="relative flex flex-col justify-start bg-[url('/decorative/shady-circle.png')] bg-contain bg-center bg-no-repeat
+	class="relative flex flex-col justify-start bg-[url('/decorative/shady-circle.png')] bg-contain bg-top bg-no-repeat
 	  pb-[20px] xl:min-h-screen paddingContainer xl:pb-[30px]"
 >
 	<Header />

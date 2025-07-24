@@ -10,16 +10,15 @@
 	contents={getInTouches}
 	gridCols="md:col-span-4 xl:col-span-4"
 />
-<div class="mt-[96px] flex flex-col paddingContainer">
-
+<div class="paddingContainer mt-8 flex flex-col xl:mt-[96px]">
 	<!-- divider -->
 	<div class="mt-[45px] h-0.5 w-full bg-[rgba(81,113,147,0.5)]"></div>
 
 	<div
-		class="flex w-full flex-col bg-[url('/decorative/footer-circle.png')] bg-contain bg-center bg-no-repeat"
+		class="flex w-full flex-col bg-[url('/decorative/footer-circle.png')] bg-contain bg-bottom bg-no-repeat xl:bg-center"
 	>
-		<div class="mt-[45px] grid w-full grid-cols-12 gap-[30px]">
-			<div class="col-span-6 flex flex-col">
+		<div class="mt-[45px] grid w-full grid-cols-12 gap-x-4 gap-y-2.5 xl:gap-x-[30px]">
+			<div class="col-span-12 flex flex-col xl:col-span-6">
 				<!-- logo -->
 				<div class="flex items-center gap-[9px]">
 					<div class="bg-primary h-[48px] w-[48px] rounded-[4px]"></div>
@@ -93,8 +92,10 @@
 						>
 					</div>
 				</div>
+				<!-- divider -->
+				<div class="my-[5px] block h-0.5 w-full bg-[rgba(81,113,147,0.5)] xl:hidden"></div>
 			</div>
-			<div class="col-span-3">
+			<div class="col-span-6 xl:col-span-3">
 				<p class="heading-md">Navigation</p>
 				<div class="body-lg text-accent mt-[24px] flex flex-col gap-[12px]">
 					<a class="hover:text-secondary active:text-primary duration-300" href="/">About Us</a>
@@ -107,7 +108,7 @@
 					>
 				</div>
 			</div>
-			<div class="col-span-3">
+			<div class="col-span-6 xl:col-span-3">
 				<p class="heading-md">Services</p>
 				<div class="body-lg text-accent mt-[24px] flex flex-col gap-[12px]">
 					<a class="hover:text-secondary active:text-primary duration-300" href="/"

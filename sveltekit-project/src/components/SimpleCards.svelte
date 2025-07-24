@@ -23,7 +23,7 @@
 				<div class="flex h-[300px] w-full max-w-[300px] items-center justify-center">
 					<img class=" h-full max-w-full object-contain" src={content.imgUrl} alt={content.title} />
 				</div>
-				<p class="heading-md text-secondary mt-[24px]">{content.title}</p>
+				<p class="heading-md text-secondary mt-[24px] self-start">{content.title}</p>
 				<p class="body-lg text-accent mt-[11px]">{content.desc}</p>
 			</div>
 		{/each}
