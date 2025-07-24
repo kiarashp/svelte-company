@@ -15,12 +15,14 @@
 	}>();
 </script>
 
+
 <div
-	class="relative flex flex-col justify-start  bg-[url('/decorative/shady-circle.png')] bg-contain bg-center bg-no-repeat px-[7rem] min-h-screen pb-[30px]"
+	class="relative flex min-h-screen flex-col justify-start bg-[url('/decorative/shady-circle.png')] bg-contain bg-center
+	 bg-no-repeat px-[1rem] pb-[20px] xl:px-[7rem] xl:pb-[30px]"
 >
 	<Header />
 
-	<p class="heading-xxl mt-[59px] w-10/12">{title}</p>
+	<p class="heading-xxl mt-[105px] w-10/12">{title}</p>
 	<p class="body-lg mt-[24px] w-10/12">
 		{subtitle}
 	</p>

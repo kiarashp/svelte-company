@@ -2,14 +2,15 @@
 
 		interface button {
 			btnTxt: string,
-			others :  any
+			customClass?: string,
+			others? :  any
 		}
-        let {btnTxt, ...others} = $props()
+        let {btnTxt,customClass, ...others}:button = $props()
     </script>
     <!-- button -->
 	<button
-		class="relative flex min-h-[54px] min-w-[200px] items-center justify-center bg-gradient-to-b
-      from-[#3398DB] to-[#BDDEF3] p-[2px]" {...others}
+		class={`relative z-10 flex min-h-[54px] min-w-[200px] items-center justify-center bg-gradient-to-b
+      from-[#3398DB] to-[#BDDEF3] p-[2px] ${customClass}`} {...others}
 	>
 		<!-- noise overlay -->
 		<div

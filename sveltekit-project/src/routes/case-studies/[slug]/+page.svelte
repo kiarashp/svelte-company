@@ -8,7 +8,7 @@
 
 <div class="bg-#F5F5F5 flex min-h-screen flex-col justify-start px-[7rem] pb-[30px]">
 	<Header />
-	<div class="mt-[40px] grid grid-cols-10 gap-[30px]">
+	<div class="mt-[105px] grid grid-cols-10 gap-[30px]">
 		<div class=" col-span-7">
 			<!-- single case study -->
 			<div class="flex h-[400px] w-full items-center justify-center overflow-hidden">
