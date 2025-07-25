@@ -2,8 +2,9 @@
 	import ButtonPrimary from './ButtonPrimary.svelte';
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
+	import { clickOutside } from '$lib/actions/clickOutside';
 
-	import { fade, slide } from 'svelte/transition';
+	import { slide } from 'svelte/transition';
 
 	let menuOpen = $state(false);
 	let isScrolled: boolean = $state(false);
@@ -60,9 +61,9 @@
 <div bind:this={sentinel} class="pointer-events-none absolute left-0 top-0 h-1"></div>
 
 <div
-	class="font-nav fixed left-0 top-0 z-50 flex h-[102px] w-[100vw] items-center justify-between
-	 transition-all duration-300 ease-in-out
-	paddingContainer
+	class="font-nav paddingContainer fixed left-0 top-0 z-50 flex h-[102px] w-[100vw] items-center
+	 justify-between transition-all duration-300
+	ease-in-out
 	{isScrolled ? '   bg-white shadow-lg   backdrop-blur-sm' : 'bg-transparent '}
 	"
 >
@@ -104,12 +105,13 @@
 	</nav>
 
 	<!-- mobile menu -->
-	<div class="relative h-full w-1/2 xl:hidden flex items-center justify-end">
+	<div class="relative flex h-full w-1/2 items-center justify-end xl:hidden">
 		{#if menuOpen}
 			<div
 				class="bg-primary heading-sm body-md fixed right-0 top-0 z-30 flex h-[100vh]
 			 w-[40%] flex-col items-center gap-5 px-4 pt-[102px] text-white transition-all xl:hidden"
 				transition:slide={{ duration: 300, axis: 'x' }}
+				use:clickOutside={{callback: () => (menuOpen = false), excludeEl: document.querySelector('#burger-x-menu') as HTMLElement}}
 			>
 				<a
 					class="active:text-secondary cursor-pointer transition duration-300 hover:text-gray-500"
@@ -142,11 +144,12 @@
 		<!-- burger menu -->
 		<button
 			onclick={toggleMenu}
-			class=" right-1  z-50  h-10 w-10  flex items-center justify-center"
+			class=" right-1 z-50 flex h-10 w-10 items-center justify-center"
 			aria-label="Toggle navigation menu"
+			id="burger-x-menu"
 		>
 			<div
-				class=" active:scale-85 flex h-full w-full items-center justify-start transition-all duration-300"
+				class=" active:scale-85 flex h-full w-full items-center justify-start transition-all duration-300 pointer-events-none"
 			>
 				<span
 					class={`text-accent absolute block h-0.5 w-7 transform bg-current transition duration-500 ease-in-out ${menuOpen ? 'rotate-45' : '-translate-y-1.5'}`}
@@ -162,5 +165,11 @@
 		</button>
 	</div>
 
-	<ButtonPrimary btnTxt="Get a consultation" customClass="xl:flex hidden" onclick={()=>{goto('/contact-us/#contact-form')}} />
+	<ButtonPrimary
+		btnTxt="Get a consultation"
+		customClass="xl:flex hidden"
+		onclick={() => {
+			goto('/contact-us/#contact-form');
+		}}
+	/>
 </div>
