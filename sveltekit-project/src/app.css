@@ -58,13 +58,13 @@
 		@apply text-[1rem] md:text-[1.375rem] 2xl:text-[1.5rem];
 	}
 	.body-lg {
-		@apply text-[0.9rem] md:text-[1.0625rem] 2xl:text-[1.125rem];
+		@apply text-[0.8.5rem] md:text-[1.0625rem] 2xl:text-[1.125rem];
 	}
 	.body-md {
-		@apply text-[0.85rem] md:text-[0.975rem] 2xl:text-[1rem];
+		@apply text-[0.79rem] md:text-[0.975rem] 2xl:text-[1rem];
 	}
 	.body-sm {
-		@apply text-[0.8125rem] md:text-[0.84375rem] 2xl:text-[0.875rem];
+		@apply text-[0.75rem] md:text-[0.84375rem] 2xl:text-[0.875rem];
 	}
 	.max-h-unset {
 		max-height: unset;

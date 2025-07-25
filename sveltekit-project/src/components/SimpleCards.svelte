@@ -18,13 +18,13 @@
 	<div class="grid w-full grid-cols-12 justify-items-center gap-4 xl:gap-[30px] mt-4">
 		{#each contents as content (content.title)}
 			<div
-				class="col-span-12 flex flex-col items-center justify-start {gridCols}"
+				class="col-span-12 w-full flex flex-col items-center justify-start {gridCols}"
 			>
 				<div class="flex h-[300px] w-full max-w-[300px] items-center justify-center">
 					<img class=" h-full max-w-full object-contain" src={content.imgUrl} alt={content.title} />
 				</div>
 				<p class="heading-md text-secondary mt-[24px] self-start">{content.title}</p>
-				<p class="body-lg text-accent mt-[11px]">{content.desc}</p>
+				<p class="body-lg text-accent mt-[11px] self-start">{content.desc}</p>
 			</div>
 		{/each}
 	</div>
