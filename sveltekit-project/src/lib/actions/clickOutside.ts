@@ -6,7 +6,6 @@ type Params = {
 };
 export function clickOutside(node: HTMLElement, { callback, excludeEl }: Params) {
 	function handleClick(event: MouseEvent) {
-		console.log(event.target === excludeEl);
 		if (!node.contains(event.target as Node) && event.target !== excludeEl) {
 			callback();
 		}

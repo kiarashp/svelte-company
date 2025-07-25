@@ -7,9 +7,7 @@
 
 	let formEle: HTMLFormElement | undefined = $state();
 	$effect(() => {
-		console.log(formEle)
 		if (page.url.hash === '#contact-form') {
-			console.log('Hash detected, scrolling to contact form');
 			scrollToContactForm();
 		}
 	});
@@ -79,7 +77,6 @@
 			contactSubject.isValid &&
 			contactMessage.isValid
 		) {
-			console.log('form submited');
 			isLoading = true;
 			const response = await fetch('/api/send-mail', {
 				method: 'POST',
@@ -100,7 +97,6 @@
 			}
 			isLoading = false;
 
-			console.log(response);
 		} else {
 			contactName.touched = true;
 			contactEmail.touched = true;
