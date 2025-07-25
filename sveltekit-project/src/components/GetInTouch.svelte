@@ -98,14 +98,11 @@
 			<div class="col-span-6 xl:col-span-3">
 				<p class="heading-md">Navigation</p>
 				<div class="body-lg text-accent mt-[24px] flex flex-col gap-[12px]">
-					<a class="hover:text-secondary active:text-primary duration-300" href="/">About Us</a>
-					<a class="hover:text-secondary active:text-primary duration-300" href="/">Case Studies</a>
-					<a class="hover:text-secondary active:text-primary duration-300" href="/">Careers</a>
-					<a class="hover:text-secondary active:text-primary duration-300" href="/">Contact Us</a>
-					<a class="hover:text-secondary active:text-primary duration-300" href="/">T&C</a>
-					<a class="hover:text-secondary active:text-primary duration-300" href="/"
-						>Privacy Policy</a
-					>
+					<a class="hover:text-secondary active:text-primary duration-300" href="/about-us">About Us</a>
+					<a class="hover:text-secondary active:text-primary duration-300" href="/case-studies">Case Studies</a>
+					<a class="hover:text-secondary active:text-primary duration-300" href="/services">Services</a>
+					<a class="hover:text-secondary active:text-primary duration-300" href="/contact-us">Contact Us</a>
+
 				</div>
 			</div>
 			<div class="col-span-6 xl:col-span-3">

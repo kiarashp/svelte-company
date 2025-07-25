@@ -2,6 +2,7 @@
 	import Header from './Header.svelte';
 	import ButtonPrimary from './ButtonPrimary.svelte';
 	import logos from '$lib/db/logos';
+	import { goto } from '$app/navigation';
 
 	const {
 		title,
@@ -30,10 +31,10 @@
 		{description}
 	</p>
 	<div class="w-12/12 mt-[24px] flex flex-col md:flex-row items-center gap-[24px] self-end xl:w-6/12">
-		<ButtonPrimary btnTxt="Get a consultation" />
+		<ButtonPrimary btnTxt="Get a consultation" onclick={()=>{goto('/contact-us/#contact-form')}}/>
 		<a
 			class="body-md hover:decoration-secondary hover:text-accent active:text-primary active:decoration-primary font-semibold underline duration-300"
-			href="/">View Case Studies</a
+			href="/case-studies">View Case Studies</a
 		>
 	</div>
 	{#if showGrowingClients}

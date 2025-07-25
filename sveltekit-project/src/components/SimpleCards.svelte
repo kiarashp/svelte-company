@@ -1,5 +1,6 @@
 <script lang="ts">
 	import ButtonOutline from './ButtonOutline.svelte';
+	import { goto } from '$app/navigation';
     interface Props {
         title: string;
         subtitle: string;
@@ -30,7 +31,7 @@
 	</div>
 	{#if consultation}
 		<div class="mt-[40px] flex items-center justify-center">
-			<ButtonOutline buttonTxt="Get a consultation" />
+			<ButtonOutline buttonTxt="Get a consultation" onclick={()=>{goto('/contact-us/#contact-form')}}/>
 		</div>
 	{/if}
 

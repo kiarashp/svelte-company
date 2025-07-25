@@ -1,8 +1,25 @@
 <script lang="ts">
 	import Hero from '$components/Hero.svelte';
 	import ButtonPrimary from '$components/ButtonPrimary.svelte';
-	import { json } from '@sveltejs/kit';
-;
+	import { page } from '$app/state';
+	import { tick } from 'svelte';
+
+
+	let formEle: HTMLFormElement | undefined = $state();
+	$effect(() => {
+		console.log(formEle)
+		if (page.url.hash === '#contact-form') {
+			console.log('Hash detected, scrolling to contact form');
+			scrollToContactForm();
+		}
+	});
+	async function scrollToContactForm() {
+		await tick();
+		formEle?.scrollIntoView({
+			behavior: 'smooth',
+			block: 'start'
+		});
+	}
 	interface theInput {
 		value: string;
 		touched: boolean;
@@ -102,13 +119,17 @@
 	showGrowingClients={false}
 />
 
-<div class="mt-[96px] flex flex-col paddingContainer">
+<div class="paddingContainer mt-[96px] flex flex-col">
 	<p class="heading-xl">Let's Talk Business</p>
 	<p class="body-lg w-9/12">
 		Your vision, our expertise. Discover how we can help you achieve sustainable growth and
 		impactful solutions.
 	</p>
-	<form class=" text-primary relative mt-[45px] grid w-full grid-cols-12 md:gap-[30px] gap-3 p-5">
+
+	<form
+		bind:this={formEle}
+		class=" text-primary relative mt-[45px] grid w-full grid-cols-12 gap-3 p-5 md:gap-[30px]"
+	>
 		{#if isLoading}
 			<div
 				class="absolute inset-0 z-20 col-span-12 flex h-full w-full items-center justify-center rounded-sm bg-[rgba(21,29,38,0.8)]"
@@ -131,7 +152,7 @@
 			</p>
 		{:else}
 			<!-- first name -->
-			<div class="md:col-span-6 col-span-12 flex flex-col">
+			<div class="col-span-12 flex flex-col md:col-span-6">
 				<label class="text-primary" for="first-name-input">First Name</label>
 				<div class="w-full">
 					<input
@@ -152,7 +173,7 @@
 				</div>
 			</div>
 			<!-- Email -->
-			<div class="md:col-span-6 col-span-12 flex flex-col">
+			<div class="col-span-12 flex flex-col md:col-span-6">
 				<label class="text-primary" for="email-input">Email</label>
 				<div class="w-full">
 					<input
@@ -173,7 +194,7 @@
 				</div>
 			</div>
 			<!-- Service  -->
-			<div class="md:col-span-6 col-span-12 flex flex-col">
+			<div class="col-span-12 flex flex-col md:col-span-6">
 				<label class="text-primary" for="service-input">Service</label>
 				<select
 					class="border-accent focus:ring-accent h-full w-full appearance-none border-[2px] focus:ring-2"
@@ -196,7 +217,7 @@
 				</select>
 			</div>
 			<!-- Budget -->
-			<div class="md:col-span-6 col-span-12 flex flex-col">
+			<div class="col-span-12 flex flex-col md:col-span-6">
 				<label class="text-primary" for="budget-input">Budget</label>
 				<div class="relative w-full">
 					<input

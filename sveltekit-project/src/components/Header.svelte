@@ -1,6 +1,7 @@
 <script lang="ts">
 	import ButtonPrimary from './ButtonPrimary.svelte';
 	import { onMount } from 'svelte';
+	import { goto } from '$app/navigation';
 
 	import { fade, slide } from 'svelte/transition';
 
@@ -161,5 +162,5 @@
 		</button>
 	</div>
 
-	<ButtonPrimary btnTxt="Get a consultation" customClass="xl:flex hidden" />
+	<ButtonPrimary btnTxt="Get a consultation" customClass="xl:flex hidden" onclick={()=>{goto('/contact-us/#contact-form')}} />
 </div>

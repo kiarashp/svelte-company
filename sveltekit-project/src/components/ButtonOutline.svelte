@@ -1,9 +1,13 @@
 <script lang="ts">
-    let {buttonTxt} = $props()
+	import type { HTMLButtonAttributes } from "svelte/elements";
+		interface buttonOutLine extends HTMLButtonAttributes {
+		buttonTxt: string;
+	}
+    let {buttonTxt,...others}:buttonOutLine = $props()
 </script>
 <button
 	class="group/theButton flex cursor-pointer items-center justify-center gap-4 transition-all duration-300 active:scale-95"
-	><span
+	{...others}><span
 		class="text-accent heading-sm group-hover/theButton:text-primary group-active/theButton:text-accent font-semibold duration-300"
 		>{buttonTxt}</span
 	>
